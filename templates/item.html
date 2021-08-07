@@ -1,0 +1,15 @@
+{% extends "layout.html"%}
+{% block content %}
+<body>
+<h2>Товары</h2>
+
+{% for product in product_list%}
+    <a href="/products/{{ product.id}}/"> {{ product.title}}</a><br/>
+    <span>Цена:{{ product.price }}</span>
+    <br>
+    <span>Теги:{%for tag in product.tags.all %} {{ tag.name }}{%endfor%}</span>
+    <hr/>
+{% endfor %}
+</body>
+
+{%endblock%}
